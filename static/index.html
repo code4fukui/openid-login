@@ -1,13 +1,15 @@
 <!DOCTYPE html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width">
 <h1>login test for GitHub</h1>
 <a href="https://github.com/login/oauth/authorize?client_id=ac0f8e75b3dd97527c41&scope=">GitHubでログイン</a><br>
-<div id=div_access_token></div>
-<textarea id=ta style="width:80vw;height:20em;"></textarea>
-
+<span id=div_access_token></span><button id=btn style="margin:0.5em">アクセストークン削除</button><br>
+<textarea id=ta style="width:100%;height:50em;"></textarea>
 <script type="module">
+import { css } from "https://js.sabae.cc/stdom.js";
 import { GitHub } from "https://code4fukui.github.io/GitHub/GitHub.js";
 
 onload = async () => {
+  css();
+
   const accessToken = localStorage.getItem("accessToken");
   div_access_token.textContent = accessToken;
 
@@ -16,6 +18,11 @@ onload = async () => {
     const user = await github.getUser();
     ta.value = JSON.stringify(user, null, 2);
   }
+
+  btn.onclick = () => {
+    localStorage.removeItem("accessToken");
+    location.reload();
+  };
 };
 </script>
 </body></html>
