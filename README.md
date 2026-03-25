@@ -1,24 +1,21 @@
 # openid-login
-日本語のREADMEはこちらです: [README.ja.md](README.ja.md)
 
-A simple server with OpenID login using GitHub.
+A Web/Code project by [Code for FUKUI](https://github.com/code4fukui).
 
-## Features
-- Implements OpenID login flow using GitHub
-- Stores access token in browser local storage
-- Displays user information after successful login
+**Live demo**: https://code4fukui.github.io/openid-login/
 
-## Requirements
-- Deno runtime
+## Technology Stack
 
-## Usage
-1. Clone the repository
-2. Create a `client_secret.txt` file in the root directory with your GitHub OAuth app secret key.
-3. Run the server using the provided `run.sh` script:
-   ```
-   ./run.sh
-   ```
-4. Open `http://localhost:8010` in your web browser to see the demo.
+
+## Installation & Setup
+
+No build step required. Clone the repository and open `index.html` in a browser,
+or visit the live demo at https://code4fukui.github.io/openid-login/
+
+## Contributing
+
+Contributions are welcome. Please open an issue or pull request on GitHub.
 
 ## License
-This project is licensed under the [MIT License](LICENSE).
+
+MIT License. See [LICENSE](./LICENSE) for details.
